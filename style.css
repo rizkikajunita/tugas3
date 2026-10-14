@@ -1,0 +1,213 @@
+/* ===== Praktikum 1 - Menyiapkan CSS Eksternal ===== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #d807bc;
+  background: #f3f4f6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== Praktikum 2 - Membuat Variabel Warna dan Container ===== */
+:root {
+  --primary: #ec34c5;
+  --primary-dark: #af6ea1;
+  --surface: #ffffff;
+  --background: #f3f4f6;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #d1d5db;
+}
+
+.container {
+  width: min(100% - 2rem, 1100px);
+  margin-inline: auto;
+}
+
+/* ===== Praktikum 3 - Styling Header dan Navigasi ===== */
+header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+}
+
+header h1 {
+  margin: 0;
+  color: var(--primary);
+}
+
+nav {
+  background: var(--primary);
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+  list-style: none;
+  margin: 0;
+  padding: .6rem 0;
+}
+
+nav a {
+  display: block;
+  padding: .6rem .8rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: .35rem;
+}
+
+nav a:hover, nav a:focus {
+  background: var(--primary-dark);
+}
+
+/* ===== Praktikum 4 - Membuat Dashboard dengan Grid ===== */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-block: 1.5rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: .75rem;
+  padding: 1rem;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+@media (min-width: 640px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===== Praktikum 5 - Membuat Halaman Profil Responsif ===== */
+.profile {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  background: var(--surface);
+  padding: 1rem;
+  border-radius: .75rem;
+}
+
+.profile figure {
+  margin: 0;
+}
+
+.profile img {
+  max-width: 180px;
+  border-radius: .75rem;
+}
+
+@media (min-width: 700px) {
+  .profile {
+    grid-template-columns: 180px 1fr;
+  }
+}
+
+/* ===== Praktikum 6 - Styling Tabel Akademik ===== */
+.table-wrapper {
+  overflow-x: auto;
+  background: var(--surface);
+  border-radius: .75rem;
+}
+
+table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: .75rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+th {
+  background: #eff6ff;
+  color: #790e59;
+}
+
+/* ===== Praktikum 7 - Styling Form Mahasiswa ===== */
+form {
+  max-width: 760px;
+  background: var(--surface);
+  padding: 1.25rem;
+  border-radius: .75rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: .35rem;
+  font-weight: 600;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: .7rem .8rem;
+  border: 1px solid var(--border);
+  border-radius: .4rem;
+  font: inherit;
+  background: #fff;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid #bfdbfe;
+  border-color: var(--primary);
+}
+
+button, input[type="submit"] {
+  border: 0;
+  border-radius: .4rem;
+  padding: .7rem 1rem;
+  background: var(--primary);
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover, input[type="submit"]:hover {
+  background: var(--primary-dark);
+}
+
+/* ===== Praktikum 8 - Membuat Form Dua Kolom pada Layar Lebar ===== */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
